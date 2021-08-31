@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;   
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #93fd93;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cookie', cursive;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(350px,90%);
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+h2 {
+    margin: 20px auto;
+    border: 0;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+form {
+    font-size: 1rem;
+    padding: 0 1.6em 0 1.6em;
+    box-sizing: border-box;
+}
+
+.text {
+    position:relative;
+    margin: 1.875em 0;
+}
+
+.text input{
+    width: 100%;
+    height: 1.875em;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Merriweather', serif;
+    opacity: 0.8;
+}
+
+.text label {
+    position: absolute;
+    top: 50%;
+    color: #777777;
+    font-size: 1.2rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.text #line::before {  /* line below input field */
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #777777;
+    transition: .5s;
+}
+.text input:focus ~ label,
+.text input:valid ~ label {
+    top: -3px;
+    color: #108adb;
+}
+.text input:focus ~ #line::before,
+.text input:valid ~ #line::before{
+    background: #108adb;
+}
+
+#add-btn {
+    cursor: pointer;
+    display: block;
+    width: min(35%,110px);
+    margin: 20px auto;
+    padding: 1.1em;
+    font-family: 'Merriweather', serif;
+    color: rgb(22, 22, 22);
+    background: #4f9dd1;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+#list {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+li {
+    position: relative;
+    padding: 8px;
+    background: rgb(255, 210, 210);
+    font-size: 16px;
+    font-family: 'Lobster Two', cursive;
+    transition: 0.1s;
+    border-radius: 10px;
+}
+
+li:nth-child(odd) {
+    background: rgb(189, 187, 187);
+}
+
+li:hover {
+    background: rgb(255, 160, 168);
+}
+
+.close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 9.75px;
+    border: 0;
+    background: transparent;
+}
+
+.close:hover {
+    background: rgb(255, 68, 68);
+}
